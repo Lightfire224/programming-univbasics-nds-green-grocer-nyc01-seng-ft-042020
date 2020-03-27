@@ -33,34 +33,7 @@ def consolidate_cart(cart)
 
 
 def apply_coupons(cart: [] , coupons: [])
-    my_hash = {}
-  if coupons == nil || coupons.empty?
-    my_hash = cart
-  end
-  coupons.each do |coupon|
-    cart.each do |itemname, data|
-      if itemname == coupon[:item]
-        count = data[:count] - coupon[:num]
-
-        if count >= 0
-          if my_hash["#{itemname} W/COUPON"] == nil
-            my_hash["#{itemname} W/COUPON"] = {price: coupon[:cost], clearance: data[:clearance], count: 1}
-          else
-            couponcount = my_hash["#{itemname} W/COUPON"][:count] + 1
-            my_hash["#{itemname} W/COUPON"] = {price: coupon[:cost], clearance: data[:clearance], count: couponcount}
-          end
-        else
-          count = data[:count]
-        end
-        my_hash[itemname] = data
-        my_hash[itemname][:count] = count
-      else
-        my_hash[itemname] = data
-      end
-    end
-  end
-  my_hash
-end
+  
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
