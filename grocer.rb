@@ -13,7 +13,7 @@ def consolidate_cart(cart)
   cart_list = []
   counter = 0
     while i<cart.length do
-      itemTocartAr = find_item_by_name_in_collection(cart[i][:item], cart_list)
+       = find_item_by_name_in_collection(cart[i][:item], cart_list)
       if itemTocartAr
         itemTocartAr[:count] += 1
       else
