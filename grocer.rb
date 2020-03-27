@@ -25,7 +25,7 @@ def consolidate_cart(cart)
         }
         cart_list << cart_object
       end
-      i += 1
+      counter += 1
     end
     cart_list
   end
