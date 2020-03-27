@@ -10,7 +10,11 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-consolidated_cart = {}
+  consolidated_cart = {}
+  cart_list = []
+  counter = 0
+    while counter < cart.length do
+      
   cart.each { |grocery| grocery.each { |product,values| consolidated_cart[product] = {price: values[:price], clearance: values[:clearance], count: cart.count(grocery)} } }
   consolidated_cart
 end
