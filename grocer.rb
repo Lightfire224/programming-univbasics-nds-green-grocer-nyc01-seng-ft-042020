@@ -13,11 +13,11 @@ def consolidate_cart(cart)
   cart_list = []
   counter = 0
     while counter < cart.length do
-      object = find_item_by_name_in_collection(cart[counter])[:item], cart_list)
-      if object
-        object[:count] +=1
+      cart_thing = find_item_by_name_in_collection(cart[counter])[:item], cart_list)
+      if cart_thing
+        cart_thing[:count] +=1
       else
-        object = {
+        cart_thing = {
           :item => cart[counter][:item],
           :price => cart[counter][:price],
           :clearance => cart[counter][:clearance],
@@ -29,7 +29,7 @@ def consolidate_cart(cart)
     end
     cart_list
   end
-end
+
 
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
