@@ -49,6 +49,7 @@ cart.each do |item|
 	puts "=" * 10
 end
 
+
 puts "Coupons on hand"
 coupons.each do |coupon|
 	puts "Get #{coupon[:item].capitalize} for #{coupon[:cost]} when you by #{coupon[:num]}"
