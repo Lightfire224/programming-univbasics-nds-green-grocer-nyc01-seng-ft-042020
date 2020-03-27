@@ -30,9 +30,6 @@ def consolidate_cart(cart)
     end
     cart_list
   end
-  cart.each { |grocery| grocery.each { |product,values| consolidated_cart[product] = {price: values[:price], clearance: values[:clearance], count: cart.count(grocery)} } }
-  consolidated_cart
-end
 
 def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
