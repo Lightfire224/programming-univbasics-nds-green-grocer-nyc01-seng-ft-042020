@@ -10,10 +10,10 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  cartAr = []
-  i = 0
+  cart_list = []
+  counter = 0
     while i<cart.length do
-      itemTocartAr = find_item_by_name_in_collection(cart[i][:item], cartAr)
+      itemTocartAr = find_item_by_name_in_collection(cart[i][:item], cart_list)
       if itemTocartAr
         itemTocartAr[:count] += 1
       else
