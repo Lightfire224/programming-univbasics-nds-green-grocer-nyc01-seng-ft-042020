@@ -14,8 +14,7 @@ def consolidate_cart(cart)
   i = 0
     while i<cart.length do
       itemTocartAr = find_item_by_name_in_collection(cart[i][:item], cartAr)
-      if itemTocartAr#if exist                    item name to find, item collection to search through
-    # if itemTocartAr!=nil 如果不等于 nil，如果并没有不存在，如果存在
+      if itemTocartAr
         itemTocartAr[:count] += 1
       else
         itemTocartAr = {
@@ -30,26 +29,7 @@ def consolidate_cart(cart)
     end
     cartAr
   end
-# def consolidate_cart(cart)
-#   cart_list = []
-#   counter = 0
-#     while counter < cart.length do
-#       cart_thing = find_item_by_name_in_collection(cart[counter])[:item], cart_list)
-#       if cart_thing
-#         cart_thing[:count] +=1
-#       else
-#         cart_thing = {
-#           :item => cart[counter][:item],
-#           :price => cart[counter][:price],
-#           :clearance => cart[counter][:clearance],
-#           :count => 1
-#         }
-#         cart_list.append(object)
-#       end
-#       counter += 1
-#     end
-#     cart_list
-#   end
+
 
 
 def apply_coupons(cart, coupons)
