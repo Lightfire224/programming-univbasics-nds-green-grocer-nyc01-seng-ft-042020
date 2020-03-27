@@ -9,26 +9,26 @@ def find_item_by_name_in_collection(name, collection)
   nil
 end
 
-def consolidate_cart(cart)
-  cart_list = []
-  counter = 0
-    while counter < cart.length do
-      cart_thing = find_item_by_name_in_collection(cart[counter])[:item], cart_list)
-      if cart_thing
-        cart_thing[:count] +=1
-      else
-        cart_thing = {
-          :item => cart[counter][:item],
-          :price => cart[counter][:price],
-          :clearance => cart[counter][:clearance],
-          :count => 1
-        }
-        cart_list.append(object)
-      end
-      counter += 1
-    end
-    cart_list
-  end
+# def consolidate_cart(cart)
+#   cart_list = []
+#   counter = 0
+#     while counter < cart.length do
+#       cart_thing = find_item_by_name_in_collection(cart[counter])[:item], cart_list)
+#       if cart_thing
+#         cart_thing[:count] +=1
+#       else
+#         cart_thing = {
+#           :item => cart[counter][:item],
+#           :price => cart[counter][:price],
+#           :clearance => cart[counter][:clearance],
+#           :count => 1
+#         }
+#         cart_list.append(object)
+#       end
+#       counter += 1
+#     end
+#     cart_list
+#   end
 
 
 def apply_coupons(cart, coupons)
