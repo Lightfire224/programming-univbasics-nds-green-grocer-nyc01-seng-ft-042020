@@ -9,6 +9,27 @@ def find_item_by_name_in_collection(name, collection)
   nil
 end
 
+def consolidate_cart(cart)
+  cartAr = []
+  i = 0
+    while i<cart.length do
+      itemTocartAr = find_item_by_name_in_collection(cart[i][:item], cartAr)
+      if itemTocartAr#if exist                    item name to find, item collection to search through
+    # if itemTocartAr!=nil 如果不等于 nil，如果并没有不存在，如果存在
+        itemTocartAr[:count] += 1
+      else
+        itemTocartAr = {
+          :item => cart[i][:item],
+          :price => cart[i][:price],
+          :clearance => cart[i][:clearance],
+          :count => 1
+        }
+        cartAr << itemTocartAr
+      end
+      i += 1
+    end
+    cartAr
+  end
 # def consolidate_cart(cart)
 #   cart_list = []
 #   counter = 0
