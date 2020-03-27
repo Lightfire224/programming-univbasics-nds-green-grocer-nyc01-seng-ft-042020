@@ -12,7 +12,7 @@ end
 def consolidate_cart(cart)
   cart_list = []
   counter = 0
-    while i < cart.length do
+    while counter < cart.length do
       cart_object = find_item_by_name_in_collection(cart[counter][:item], cart_list)
       if cart_object
         cart_object[:count] += 1
