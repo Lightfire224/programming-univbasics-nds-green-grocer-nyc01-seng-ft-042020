@@ -12,22 +12,22 @@ end
 def consolidate_cart(cart)
   cart_list = []
   counter = 0
-    while i<cart.length do
-      cart_object = find_item_by_name_in_collection(cart[i][:item], cart_list)
+    while i < cart.length do
+      cart_object = find_item_by_name_in_collection(cart[counter][:item], cart_list)
       if cart_object
         cart_object[:count] += 1
       else
         cart_object = {
-          :item => cart[i][:item],
-          :price => cart[i][:price],
-          :clearance => cart[i][:clearance],
+          :item => cart[counter][:item],
+          :price => cart[counter][:price],
+          :clearance => cart[counter][:clearance],
           :count => 1
         }
-        cartAr << cart_object
+        cart_list << cart_object
       end
       i += 1
     end
-    cartAr
+    cart_list
   end
 
 
